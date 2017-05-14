@@ -21,7 +21,6 @@ export var Todo = React.createClass({
 
     return (
       <div className={todoClassName} onClick={ () => {
-          // this.props.onToggle(id);
           dispatch(actions.toggleTodo(id));
         }}>
         <div>
@@ -29,7 +28,7 @@ export var Todo = React.createClass({
         </div>
         <div>
           <p>{text}</p>
-          <p>{renderDate()}</p>
+          <p className="todo__subtext">{renderDate()}</p>
         </div>
       </div>
     );
