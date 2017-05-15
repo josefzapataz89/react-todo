@@ -1,9 +1,9 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-var expect = require('expect');
+import expect from 'expect';
 
 import firebase, {firebaseRef} from 'app/firebase/';
-var actions = require('actions');
+import * as actions from 'actions';
 
 var createMockStore = configureMockStore([thunk]);
 
@@ -113,7 +113,7 @@ describe('Actions', () => {
     });
 
     afterEach((done) => {
-      todosRef.remove().then(() => done());
+      todosRef.remove().then(() => done()).catch(done);
     });
 
     it('should toggle todo and dispatch UPDATE_TODO action', (done) => {
